@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sadheart4ever - xat Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="profile-card">
+            <!-- رأس البروفايل -->
+            <div class="profile-header">
+                <div class="avatar-container">
+                    <img src="https://xatimg.com/image/oWTfN97EUl5Y.png" alt="Profile" class="main-avatar">
+                    <span class="online-dot"></span>
+                    <div class="badge premium"><i class="fas fa-crown"></i></div>
+                </div>
+                <div class="profile-info">
+                    <h1 class="username">KARIM</h1>
+                    <div class="status-box">
+                        <span class="status-text">❤️ Single but not available ❤️</span>
+                        <div class="mood-container">
+                            <i class="fas fa-heartbeat mood-icon"></i>
+                            <span class="mood-text">Feeling Romantic</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- محتوى البروفايل -->
+            <div class="profile-content">
+                <!-- الإحصائيات -->
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value">1.2M</div>
+                        <div class="stat-title">Views</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">24.7K</div>
+                        <div class="stat-title">Fans</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">1,340</div>
+                        <div class="stat-title">Friends</div>
+                    </div>
+                </div>
+
+                <!-- أزرار التحكم -->
+                <div class="action-buttons">
+                    <button class="btn chat-btn pulse">
+                        <i class="fas fa-comment-medical"></i> Send Message
+                    </button>
+                    <button class="btn gift-btn">
+                        <i class="fas fa-gift"></i> Send Gift
+                    </button>
+                    <button class="btn youtube-btn" onclick="openModal()">
+                        <i class="fab fa-youtube"></i> My Favorite Song
+                    </button>
+                </div>
+
+                <!-- معلومات إضافية -->
+                <div class="info-sections">
+                    <div class="info-box">
+                        <h3><i class="fas fa-user-clock"></i> Last Active</h3>
+                        <p>2 minutes ago</p>
+                    </div>
+                    <div class="info-box">
+                        <h3><i class="fas fa-heart"></i> Best Club</h3>
+                        <p>El Ahly</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- زخارف القلوب -->
+            <div class="decorative-hearts">
+                <div class="heart h1"></div>
+                <div class="heart h2"></div>
+                <div class="heart h3"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- مشغل اليوتيوب المنبثق -->
+    <div class="modal-overlay" id="playerModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <iframe 
+                width="560" 
+                height="315" 
+                src="https://www.youtube.com/embed/EgmXTmj62ic?autoplay=1&modestbranding=1" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('playerModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('playerModal').style.display = 'none';
+            const iframe = document.querySelector('iframe');
+            iframe.src = iframe.src.replace('autoplay=1', 'autoplay=0');
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('playerModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
